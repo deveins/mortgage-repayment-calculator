@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as *;
+
+.calculator {
+    padding: 2rem 1.5rem;
+    background-color: $color-white;
+    flex: 50%;
+
+    @media (min-width: 48rem) {
+        padding: 2.5rem;
+        border-radius: 1.375rem 0 0 1.375rem;
+    }
+}

@@ -1,0 +1,23 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.error-message {
+    @include text-style(0.875rem, 500, $color-error);
+}
+
+.mortgage-type .error-message {
+    margin-top: 0.1875rem;
+}
+
+.error-message.hidden {
+    display: none;
+}
+
+.input-container.error {
+    border: 1px solid $color-error;
+}
+
+.input-container.error span {
+    color: $color-white;
+    background-color: $color-error;
+}

@@ -1,0 +1,20 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 1.75rem;
+
+    .title {
+        @include text-style(1.5rem, 700, $color-text-primary);
+    }
+
+    @media (min-width: 48rem) {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 2.625rem;
+    }
+}

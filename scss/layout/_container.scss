@@ -1,0 +1,15 @@
+@use '../abstracts/variables' as *;
+
+@media (min-width:48rem) {
+    .container {
+        max-width: 63rem;
+        margin: 0 auto;
+    }
+
+    .app {
+        display: flex;
+        border-radius: 1.375rem;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 3rem rgba(19, 48, 64, 0.12);
+    }
+}

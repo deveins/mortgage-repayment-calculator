@@ -1,0 +1,154 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 1.5625rem;
+
+    label {
+        @include text-style(1rem, 500, $color-text-secondary);
+        margin-bottom: 0.8125rem;
+    }
+
+    input {
+        width: 100%;
+        height: 100%;
+        padding: 0.75rem 1rem;
+        @include text-style(1.125rem, 700, $color-text-primary);
+        cursor: pointer;
+        border: none;
+
+        &:focus-visible {
+            outline-color: transparent;
+        }
+    }
+
+    .input-container {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        margin-bottom: 0.8125rem;
+        border-radius: 0.25rem;
+        border: 1px solid $color-border;
+        transition: all 0.2s ease;
+        
+
+        span {
+            flex-shrink: 0;
+            padding: 0.75rem 1rem;
+            @include text-style(1.125rem, 700, $color-text-secondary);
+            background-color: $color-surface-light;
+        }
+
+        &:focus-within {
+            border-color: $color-primary;
+
+            span {
+                background-color: $color-primary;
+                color: $color-text-primary;
+            }
+        }
+    }
+
+    .mortgage-term, .interest-rate {
+        flex-direction: row-reverse;
+    }
+}
+
+.mortgage-type {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 48rem) {
+        margin-bottom: 2.5rem;
+    }
+
+    legend {
+        @include text-style(1rem, 500, $color-text-secondary);
+        margin-bottom: 0.8125rem;
+    }
+
+    .radio-option {
+        display: flex;
+        align-items: center;
+        gap: 1.125rem;
+        padding: 0.8125rem 1.125rem;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        border: 1px solid $color-border;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: $color-primary;
+        }
+
+        &:has(input:checked) {
+            border-color: $color-primary;
+            background-color: $color-primary-light;
+        }
+
+        input {
+            appearance: none;
+            -webkit-appearance: none;
+            display: grid;
+            place-content: center;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            border: 2px solid $color-border;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:checked {
+                border: 2px solid $color-primary;
+            }
+
+            &::before {
+                content: "";
+                width: 0.5rem;
+                height: 0.5rem;
+                border-radius: 50%;
+                transform: scale(0);
+                transition: transform 0.1s ease-in-out;
+                background-color: $color-primary;
+            }
+
+            &:checked::before {
+                transform: scale(1);
+            }
+        }
+
+        span {
+            @include text-style(1.125rem, 600, $color-text-primary);
+        }
+    }
+}
+
+@media (min-width: 48rem) {
+    .mortgage-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "amount amount"
+            "term rate";
+        column-gap: 1.375rem;
+    }
+
+    .amount {
+        grid-area: amount;
+    }
+
+    .term {
+        grid-area: term;
+    }
+
+    .rate {
+        grid-area: rate;
+    }
+}
