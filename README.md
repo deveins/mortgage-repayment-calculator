@@ -50,7 +50,7 @@ mortgage-repayment-calculator/
 
 ## 🔗 Links
 
-- 🌐 Live Site: https://deveins.github.io/mortgage-repayment-app
+- 🌐 [Live Site](https://deveins.github.io/mortgage-repayment-calculator/)
 - 💻 GitHub: https://github.com/deveins
 - 🎯 Frontend Mentor: https://www.frontendmentor.io/profile/deveins
 
